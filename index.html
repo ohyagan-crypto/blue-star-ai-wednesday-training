@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>藍星 AI 週三台中密訓｜報名系統</title>
+  <meta name="description" content="藍星 AI 週三台中密訓報名、取消報名、學員簽到與名單統計系統。">
+  <link rel="stylesheet" href="./styles.css?v=20260805223000">
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <p class="eyebrow">Blue Star AI Course</p>
+      <h1>藍星 AI 週三台中密訓</h1>
+      <p>三堂實戰課，從剪映與數字人、Seedance 影片生成，到 AI 龍蝦智能體一次學會。</p>
+    </section>
+
+    <nav class="tabs" aria-label="功能選單">
+      <button class="tab active" type="button" data-view="register">課程報名</button>
+      <button class="tab" type="button" data-view="cancel">取消報名</button>
+      <button class="tab" type="button" data-view="checkin">簽到</button>
+      <button class="tab" type="button" data-view="roster">名單統計</button>
+    </nav>
+
+    <section class="view active" id="register">
+      <div class="grid">
+        <article class="panel course">
+          <p class="eyebrow">課程資訊</p>
+          <h2>每週三 14:00～16:00｜藍星 AI 辦公室</h2>
+          <ul class="benefits">
+            <li><span class="benefit-icon" aria-hidden="true">🎬</span><span><strong>剪映 &amp; 數字人實戰</strong>從零掌握剪映完整 SOP、數字人克隆、AI 配音字幕與短影音節奏。</span></li>
+            <li><span class="benefit-icon" aria-hidden="true">✨</span><span><strong>即夢 Seedance AI 網紅</strong>實戰製作 AI 網紅、商品廣告與 AI 短劇，快速建立可用的內容角色。</span></li>
+            <li><span class="benefit-icon" aria-hidden="true">🦞</span><span><strong>AI 龍蝦智能體</strong>認識 Agent 趨勢，打造會思考、會執行工作的 AI 智能員工。</span></li>
+            <li><span class="benefit-icon" aria-hidden="true">⚡</span><span><strong>短影音與品牌內容</strong>把課堂工具串成可複製的自媒體、客服、報表與網站工作流程。</span></li>
+          </ul>
+          <div class="course-meta">
+            <div><strong>上課時間</strong><span>每週三 14:00～16:00</span></div>
+            <div><strong>上課地點</strong><span>藍星 AI 辦公室</span></div>
+            <div><strong>地址</strong><span>台中市西屯路二段 256 巷 6 號 16 樓之 2</span></div>
+            <div><strong>交通</strong><span>捷運文心櫻花站；開車可停逢甲立體停車場</span></div>
+          </div>
+          <div class="session-list" id="sessionList"></div>
+        </article>
+
+        <form class="panel form" id="registerForm">
+          <h2>課程報名表</h2>
+          <label>場次<select name="session" required></select></label>
+          <label>報名身分
+            <select name="participantType" required>
+              <option value="">請選擇</option>
+              <option value="新人">新人</option>
+              <option value="複訓">複訓</option>
+            </select>
+          </label>
+          <label>姓名<input name="name" required autocomplete="name" placeholder="請輸入真實姓名"></label>
+          <label id="introducerLabel">介紹人<input name="introducer" placeholder="新人必填，複訓選填"></label>
+          <button type="submit">送出報名</button>
+          <p class="message" id="registerMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="view" id="cancel">
+      <form class="panel form narrow" id="cancelForm">
+        <h2>取消報名</h2>
+        <p class="form-hint">請填寫報名時的場次與姓名。</p>
+        <label>場次<select name="session" required></select></label>
+        <label>姓名<input name="name" required placeholder="請輸入報名姓名"></label>
+        <label>取消原因<input name="reason" placeholder="選填"></label>
+        <button type="submit" class="danger">確認取消報名</button>
+        <p class="message" id="cancelMessage" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="view" id="checkin">
+      <section class="panel checkin-panel">
+        <div class="quick-head">
+          <div>
+            <h2>簽到處</h2>
+            <p>第一次成功輸入 PIN 後，這台裝置會自動記住，之後可直接選場次與姓名報到。</p>
+          </div>
+          <button type="button" id="quickRefresh">更新名單</button>
+        </div>
+        <form class="form checkin-form" id="checkinForm">
+          <label>PIN<input name="pin" type="password" inputmode="numeric" maxlength="4" placeholder="第一次請輸入 PIN" required></label>
+          <label>場次<select name="session" required></select></label>
+          <label>姓名／搜尋<input name="name" required autocomplete="off" placeholder="請輸入或搜尋學員姓名"></label>
+          <label>備註<input name="note" placeholder="選填"></label>
+          <button type="submit">送出簽到</button>
+          <p class="message" id="checkinMessage" aria-live="polite"></p>
+        </form>
+
+        <section class="success inline-success" id="successBox" hidden>
+          <div class="ok">✓</div>
+          <h2>報到成功</h2>
+          <p id="successText"></p>
+          <button type="button" id="replayVoice">播放語音</button>
+        </section>
+
+        <div class="undo-checkin" id="undoCheckinBox" hidden>
+          <span id="undoCheckinText">上一筆報到可返回</span>
+          <div class="undo-actions">
+            <button type="button" id="quickReplayVoice">播放語音</button>
+            <button type="button" class="danger" id="undoCheckin">返回上一筆報到</button>
+          </div>
+        </div>
+        <p class="message" id="quickMessage" aria-live="polite"></p>
+        <div class="quick-list" id="quickList"></div>
+      </section>
+    </section>
+
+    <section class="view" id="roster">
+      <div class="panel">
+        <div class="roster-head">
+          <h2>報名與簽到名單</h2>
+          <div class="roster-actions">
+            <a class="sheet-link" id="sheetLink" href="#" target="_blank" rel="noopener" hidden>開啟名單表</a>
+            <button type="button" id="refreshRoster">更新</button>
+          </div>
+        </div>
+        <div class="roster" id="rosterList"></div>
+      </div>
+    </section>
+
+    <section class="bottom-stats panel" aria-label="報到統計">
+      <div class="bottom-stats-head">
+        <div>
+          <p class="eyebrow">Check-in Overview</p>
+          <h2>報到統計</h2>
+        </div>
+      </div>
+      <p class="stats-hint">各堂課顯示目前有效報名與剩餘名額；下方可查看三堂課的簽到統計。</p>
+      <div class="stats" id="stats" aria-live="polite"></div>
+    </section>
+
+    <div class="modal" id="appModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-card" tabindex="-1">
+        <button class="modal-close" type="button" aria-label="關閉彈窗" data-close-modal>×</button>
+        <div class="ok modal-ok">✓</div>
+        <h2 id="modalTitle">已報名成功</h2>
+        <p id="modalMessage"></p>
+        <div class="modal-body" id="modalBody"></div>
+        <button type="button" class="modal-action" data-close-modal>關閉</button>
+      </section>
+    </div>
+  </main>
+  <script src="./script.js?v=20260805223000"></script>
+</body>
+</html>
