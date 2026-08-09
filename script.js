@@ -12,8 +12,8 @@ const sessionInfo = {
   "8/26 即夢 Seedance AI 網紅基礎班": { title: "8/26（三）即夢 Seedance AI 網紅基礎班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
   "9/2 AI 龍蝦智能體趨勢班": { title: "9/2（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
 };
-const SCRIPT_VERSION = "20260805223000";
-const REGISTRATION_CLOSED = true;
+const SCRIPT_VERSION = "20260809180500";
+const REGISTRATION_CLOSED = false;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 const CHECKIN_STATS_COLLAPSED_KEY = "blueCourseCheckinStatsCollapsed";
 
@@ -474,7 +474,7 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
   const btn = form.querySelector("button");
   const msg = document.getElementById("registerMessage");
   if (REGISTRATION_CLOSED) {
-    setMessage(msg, false, "本週密訓已停止新報名，每堂上限 30 人。請洽主辦方確認候補。" );
+    setMessage(msg, false, "本週密訓暫停新報名，每堂上限 30 人。請洽主辦方確認候補。" );
     return;
   }
   const payload = formData(form);
