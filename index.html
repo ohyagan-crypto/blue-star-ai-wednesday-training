@@ -54,7 +54,8 @@
           </label>
           <label>姓名<input name="name" required autocomplete="name" placeholder="請輸入真實姓名"></label>
           <label id="introducerLabel">介紹人<input name="introducer" placeholder="新人必填，複訓選填"></label>
-          <button type="submit">送出報名</button>
+          <button type="submit" disabled aria-disabled="true">報名已截止</button>
+          <p class="form-hint">本週密訓每堂上限 30 人，目前暫停新報名。</p>
           <p class="message" id="registerMessage" aria-live="polite"></p>
         </form>
       </div>

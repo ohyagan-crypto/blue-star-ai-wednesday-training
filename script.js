@@ -3,9 +3,9 @@ let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
 const sessions = ["8/19 剪映 & 數字人實戰班","8/26 即夢 Seedance AI 網紅基礎班","9/2 AI 龍蝦智能體趨勢班"];
 const sessionCapacities = {
-  "8/19 剪映 & 數字人實戰班": 100,
-  "8/26 即夢 Seedance AI 網紅基礎班": 100,
-  "9/2 AI 龍蝦智能體趨勢班": 100
+  "8/19 剪映 & 數字人實戰班": 30,
+  "8/26 即夢 Seedance AI 網紅基礎班": 30,
+  "9/2 AI 龍蝦智能體趨勢班": 30
 };
 const sessionInfo = {
   "8/19 剪映 & 數字人實戰班": { title: "8/19（三）剪映 & 數字人實戰班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
@@ -13,6 +13,7 @@ const sessionInfo = {
   "9/2 AI 龍蝦智能體趨勢班": { title: "9/2（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
 };
 const SCRIPT_VERSION = "20260805223000";
+const REGISTRATION_CLOSED = true;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 const CHECKIN_STATS_COLLAPSED_KEY = "blueCourseCheckinStatsCollapsed";
 
@@ -472,6 +473,10 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
   const form = event.currentTarget;
   const btn = form.querySelector("button");
   const msg = document.getElementById("registerMessage");
+  if (REGISTRATION_CLOSED) {
+    setMessage(msg, false, "本週密訓已停止新報名，每堂上限 30 人。請洽主辦方確認候補。" );
+    return;
+  }
   const payload = formData(form);
   if (payload.participantType === "新人" && !String(payload.introducer || "").trim()) {
     setMessage(msg, false, "新人報名請填寫介紹人；複訓可選填。");
