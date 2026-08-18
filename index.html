@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>藍星 AI 週三台中密訓｜報名系統</title>
   <meta name="description" content="藍星 AI 週三台中密訓報名、取消報名、學員簽到與名單統計系統。">
-  <link rel="stylesheet" href="./styles.css?v=20260817180000">
+  <link rel="stylesheet" href="./styles.css?v=20260818114400">
 </head>
 <body>
   <main class="app">
@@ -43,15 +43,7 @@
         <form class="panel form" id="registerForm">
           <h2>課程報名表</h2>
           <label>場次<select name="session" required></select></label>
-          <label>報名身分
-            <select name="participantType" required>
-              <option value="">請選擇</option>
-              <option value="新人">新人</option>
-              <option value="複訓">複訓</option>
-            </select>
-          </label>
           <label>姓名<input name="name" required autocomplete="name" placeholder="請輸入真實姓名"></label>
-          <label id="introducerLabel">介紹人<input name="introducer" placeholder="新人必填，複訓選填"></label>
           <button type="submit">送出報名</button>
           <p class="form-hint">每堂上限 30 人，額滿為止。</p>
           <p class="message" id="registerMessage" aria-live="polite"></p>
@@ -144,6 +136,6 @@
       </section>
     </div>
   </main>
-  <script src="./script.js?v=20260817180000"></script>
+  <script src="./script.js?v=20260818114400"></script>
 </body>
 </html>

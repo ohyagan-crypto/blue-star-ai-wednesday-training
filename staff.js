@@ -1,4 +1,4 @@
-const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://solely-sleeve-furthermore-ons.trycloudflare.com";
+const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://gaps-sol-laboratory-precious.trycloudflare.com";
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
@@ -130,13 +130,12 @@ function renderList() {
 
   document.getElementById("staffList").innerHTML = regs.map((reg, index) => {
     const done = checked.has(reg.name);
-    const type = reg.participantType || reg.type || "";
     const name = escapeHtml(reg.name);
     return `
       <article class="staff-row ${done ? "done" : ""}">
         <div>
           <strong>${index + 1}. ${name}</strong>
-          <span>${escapeHtml(type || "未填身分")}${done ? " · 已報到" : " · 未報到"}</span>
+          <span>${done ? "已報到" : "未報到"}</span>
         </div>
         <button type="button" data-name="${name}" ${done ? "disabled" : ""}>${done ? "已報到" : "報到"}</button>
       </article>

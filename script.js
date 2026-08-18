@@ -1,4 +1,4 @@
-const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://solely-sleeve-furthermore-ons.trycloudflare.com";
+const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://gaps-sol-laboratory-precious.trycloudflare.com";
 let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
 const sessions = ["8/26 AI 龍蝦智能體趨勢班","9/2 剪映 & 數字人實戰班"];
@@ -10,7 +10,7 @@ const sessionInfo = {
   "8/26 AI 龍蝦智能體趨勢班": { title: "8/26（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
   "9/2 剪映 & 數字人實戰班": { title: "9/2（三）剪映 & 數字人實戰班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
 };
-const SCRIPT_VERSION = "20260817180000";
+const SCRIPT_VERSION = "20260818114400";
 const REGISTRATION_CLOSED = false;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 const CHECKIN_STATS_COLLAPSED_KEY = "blueCourseCheckinStatsCollapsed";
@@ -108,17 +108,6 @@ function formData(form) {
   return Object.fromEntries(new FormData(form).entries());
 }
 
-function updateIntroducerRequirement(form = document.getElementById("registerForm")) {
-  const type = form?.elements.participantType?.value || "";
-  const input = form?.elements.introducer;
-  const label = document.getElementById("introducerLabel");
-  if (!input || !label) return;
-  const required = type === "新人";
-  input.required = required;
-  input.placeholder = required ? "新人必填，請填寫介紹人" : "複訓選填";
-  label.firstChild.textContent = required ? "介紹人（新人必填）" : "介紹人（複訓選填）";
-}
-
 function setMessage(el, ok, text) {
   el.className = `message ${ok ? "ok" : "err"}`;
   el.textContent = text;
@@ -160,13 +149,12 @@ function renderRegistrationList(session) {
     <div class="modal-list">
       ${regs.map((reg, index) => {
         const name = escapeHtml(reg.name);
-        const type = escapeHtml(reg.participantType || reg.type || "未填身分");
         const status = checked.has(reg.name) ? "已報到" : "未報到";
         const note = escapeHtml(reg.createdAt || reg.note || "");
         return `
           <article class="modal-person">
             <strong>${index + 1}. ${name}</strong>
-            <span>${type} · ${status}</span>
+            <span>${status}</span>
             ${note ? `<small>${note}</small>` : ""}
           </article>
         `;
@@ -229,36 +217,14 @@ function getCheckedInCount(data, session, regs) {
   return (data.checkins || []).filter((item) => item.session === session).length;
 }
 
-function normalizeParticipantType(reg) {
-  const type = String(reg?.participantType || reg?.type || "").trim();
-  if (type.includes("新人")) return "新人";
-  if (type.includes("複訓") || type.includes("復訓")) return "複訓";
-  return "未填";
-}
-
-function getCheckedInBreakdown(data, session, regs) {
-  const checks = (data.checkins || []).filter((item) => item.session === session);
-  const activeRegByName = new Map(regs.map((reg) => [reg.name, reg]));
-  return checks.reduce((summary, check) => {
-    const type = normalizeParticipantType(activeRegByName.get(check.name));
-    summary.total += 1;
-    if (type === "新人") summary.newbie += 1;
-    else if (type === "複訓") summary.returning += 1;
-    else summary.unknown += 1;
-    return summary;
-  }, { total: 0, newbie: 0, returning: 0, unknown: 0 });
-}
-
 function formatCheckinBreakdown(breakdown) {
-  const unknownText = breakdown.unknown ? `｜未填 ${breakdown.unknown} 人` : "";
-  return `簽到 新人 ${breakdown.newbie} 人｜複訓 ${breakdown.returning} 人${unknownText}｜合計 ${breakdown.total} 人`;
+  return `簽到 ${breakdown.total} 人`;
 }
 
 function formatCityCheckinBreakdowns(sessionSummaries) {
   return `<div class="city-checkin-grid checkin-breakdown" aria-label="各城市簽到人數">${sessionSummaries.map((item) => {
     const breakdown = item.breakdown;
-    const unknownText = breakdown.unknown ? `｜未填 ${breakdown.unknown} 人` : "";
-    return `<span class="city-checkin-item"><strong>${escapeHtml(item.city)}</strong><small>新人 ${breakdown.newbie} 人｜複訓 ${breakdown.returning} 人${unknownText}｜合計 ${breakdown.total} 人</small></span>`;
+    return `<span class="city-checkin-item"><strong>${escapeHtml(item.city)}</strong><small>簽到 ${breakdown.total} 人</small></span>`;
   }).join("")}</div>`;
 }
 
@@ -318,14 +284,14 @@ function renderRosterData(data, fromFallback = false) {
     const remaining = getRemainingSeats(session, regs);
     const seatText = capacity ? `${regs.length} / ${capacity}` : `${regs.length} 人`;
     const hintText = remaining === 0 ? "已額滿" : remaining === null ? "點開看名單" : `剩餘 ${remaining} 位`;
-    const breakdown = getCheckedInBreakdown(data, session, regs);
+    const breakdown = { total: getCheckedInCount(data, session, regs) };
     return `<button class="stat stat-button" type="button" data-session="${escapeHtml(session)}" aria-label="查看 ${escapeHtml(session)} 已報名名單"><strong>${seatText}</strong><span>${session} 有效報名</span><small>${hintText}<span class="checkin-breakdown">｜${formatCheckinBreakdown(breakdown)}</span></small></button>`;
   });
   const sessionSummaries = sessions.map((session) => {
     const regs = (data.registrations || []).filter((item) => item.session === session && !isCanceled(item));
     return {
       city: getSessionCity(session),
-      breakdown: getCheckedInBreakdown(data, session, regs),
+      breakdown: { total: getCheckedInCount(data, session, regs) },
       registered: regs.length,
       capacity: getSessionCapacity(session)
     };
@@ -334,11 +300,8 @@ function renderRosterData(data, fromFallback = false) {
   const totalCapacity = sessionSummaries.reduce((sum, item) => sum + item.capacity, 0);
   const totalBreakdown = sessionSummaries.reduce((sum, item) => {
     sum.total += item.breakdown.total;
-    sum.newbie += item.breakdown.newbie;
-    sum.returning += item.breakdown.returning;
-    sum.unknown += item.breakdown.unknown;
     return sum;
-  }, { total: 0, newbie: 0, returning: 0, unknown: 0 });
+  }, { total: 0 });
   const totalSeatText = totalCapacity ? `${totalRegistered} / ${totalCapacity}` : `${totalRegistered} 人`;
   const remainingText = totalCapacity ? `｜剩餘 ${Math.max(0, totalCapacity - totalRegistered)} 位` : "";
   const totalToggleText = checkinStatsExpanded ? "點一下收合明細" : "點一下展開明細";
@@ -351,9 +314,8 @@ function renderRosterData(data, fromFallback = false) {
     const people = regs.map((reg, index) => {
       const checked = checks.some((item) => item.name === reg.name);
       const status = checked ? "已報到" : "未報到";
-      const type = reg.participantType || reg.type || "未填身份";
       const note = reg.note || reg.createdAt || "";
-      return `<div class="person"><strong>${index + 1}. ${reg.name}</strong><span>${status}</span><em>${type}</em><small>${note}</small></div>`;
+      return `<div class="person"><strong>${index + 1}. ${reg.name}</strong><span>${status}</span><small>${note}</small></div>`;
     }).join("") || `<div class="person empty">尚無資料</div>`;
     return `<section class="roster-card"><h3>${session}</h3>${people}</section>`;
   }).join("")}`;
@@ -445,12 +407,11 @@ function renderQuickCheckin() {
   list.innerHTML = regs.map((reg, index) => {
     const done = checked.has(reg.name);
     const name = escapeHtml(reg.name);
-    const type = escapeHtml(reg.participantType || reg.type || "未填身分");
     return `
       <article class="staff-row ${done ? "done" : ""}">
         <div>
           <strong>${index + 1}. ${name}</strong>
-          <span>${type}${done ? " · 已報到" : " · 未報到"}</span>
+          <span>${done ? "已報到" : "未報到"}</span>
         </div>
         <button type="button" data-name="${name}" ${done ? "disabled" : ""}>${done ? "已報到" : "報到"}</button>
       </article>
@@ -459,10 +420,6 @@ function renderQuickCheckin() {
 }
 document.querySelectorAll(".tab").forEach((tab) => {
   tab.addEventListener("click", () => setView(tab.dataset.view));
-});
-
-document.querySelector('#registerForm select[name="participantType"]').addEventListener("change", (event) => {
-  updateIntroducerRequirement(event.currentTarget.form);
 });
 
 document.getElementById("registerForm").addEventListener("submit", async (event) => {
@@ -476,11 +433,6 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
     return;
   }
   const payload = formData(form);
-  if (payload.participantType === "新人" && !String(payload.introducer || "").trim()) {
-    setMessage(msg, false, "新人報名請填寫介紹人；複訓可選填。");
-    form.elements.introducer.focus();
-    return;
-  }
   btn.disabled = true;
   btn.textContent = "送出中...";
   try {
@@ -491,7 +443,6 @@ document.getElementById("registerForm").addEventListener("submit", async (event)
       message: `${data.name} 已完成 ${data.session} 報名。`
     });
     form.reset();
-    updateIntroducerRequirement(form);
     await loadRoster();
   } catch (err) {
     setMessage(msg, false, err.message);
@@ -670,6 +621,5 @@ document.getElementById("stats").addEventListener("keydown", (event) => {
 });
 
 fillSessionSelects();
-updateIntroducerRequirement();
 loadRoster();
 
