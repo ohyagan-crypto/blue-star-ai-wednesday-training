@@ -196,7 +196,8 @@ option { background: #15110d; color: var(--ink); }
 .inline-success p {
   margin-bottom: 12px;
 }
-.ok {
+.success .ok,
+.modal-ok {
   width: 74px;
   height: 74px;
   border-radius: 50%;
