@@ -7,7 +7,599 @@
     "8/26 AI 龍蝦智能體趨勢班": 30,
     "9/2 剪映 & 數字人實戰班": 30
   },
-  "registrations": [],
+  "registrations": [
+    {
+      "id": "wed-msy4n7lh",
+      "createdAt": "2026-08-18T03:52:46.901Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "鄒珈甄"
+    },
+    {
+      "id": "wed-msy4njg7",
+      "createdAt": "2026-08-18T03:53:02.263Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "鄒珈甄"
+    },
+    {
+      "id": "wed-msy4p1bl",
+      "createdAt": "2026-08-18T03:54:12.081Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林靜滿"
+    },
+    {
+      "id": "wed-msy4pk8e",
+      "createdAt": "2026-08-18T03:54:36.590Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "林靜滿"
+    },
+    {
+      "id": "wed-msy4usnv",
+      "createdAt": "2026-08-18T03:58:40.795Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "杜雅玲"
+    },
+    {
+      "id": "wed-msy4v7r9",
+      "createdAt": "2026-08-18T03:59:00.357Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林慧綾"
+    },
+    {
+      "id": "wed-msy4wdea",
+      "createdAt": "2026-08-18T03:59:54.322Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "杜雅玲"
+    },
+    {
+      "id": "wed-msy4wrms",
+      "createdAt": "2026-08-18T04:00:12.772Z",
+      "status": "cancelled",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "王素美",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T06:00:01.633Z",
+      "cancelReason": "看錯時間"
+    },
+    {
+      "id": "wed-msy56ksu",
+      "createdAt": "2026-08-18T04:07:50.478Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "曾珮妍"
+    },
+    {
+      "id": "wed-msy5897j",
+      "createdAt": "2026-08-18T04:09:08.767Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "曾珮妍"
+    },
+    {
+      "id": "wed-msy5cbpw",
+      "createdAt": "2026-08-18T04:12:18.644Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "郭美伶"
+    },
+    {
+      "id": "wed-msy5crba",
+      "createdAt": "2026-08-18T04:12:38.854Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "黃琡媜"
+    },
+    {
+      "id": "wed-msy5dwvb",
+      "createdAt": "2026-08-18T04:13:32.711Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "黃琡媜"
+    },
+    {
+      "id": "wed-msy5ifn1",
+      "createdAt": "2026-08-18T04:17:03.661Z",
+      "status": "cancelled",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "廖",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T06:50:27.619Z",
+      "cancelReason": ""
+    },
+    {
+      "id": "wed-msy5itwl",
+      "createdAt": "2026-08-18T04:17:22.149Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "廖坤海"
+    },
+    {
+      "id": "wed-msy5n5f3",
+      "createdAt": "2026-08-18T04:20:43.695Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "賴上傑"
+    },
+    {
+      "id": "wed-msy5oheg",
+      "createdAt": "2026-08-18T04:21:45.880Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "賴上傑"
+    },
+    {
+      "id": "wed-msy5r9y3",
+      "createdAt": "2026-08-18T04:23:56.187Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "洪翠卿"
+    },
+    {
+      "id": "wed-msy5wm91",
+      "createdAt": "2026-08-18T04:28:05.413Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "吳言𤋮"
+    },
+    {
+      "id": "wed-msy5x0gz",
+      "createdAt": "2026-08-18T04:28:23.843Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "吳言熙"
+    },
+    {
+      "id": "wed-msy611ku",
+      "createdAt": "2026-08-18T04:31:31.902Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "莊淑娟"
+    },
+    {
+      "id": "wed-msy61vz1",
+      "createdAt": "2026-08-18T04:32:11.293Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "莊淑娟"
+    },
+    {
+      "id": "wed-msy67dl0",
+      "createdAt": "2026-08-18T04:36:27.396Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "洪秉毅"
+    },
+    {
+      "id": "wed-msy6800e",
+      "createdAt": "2026-08-18T04:36:56.462Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "洪秉毅"
+    },
+    {
+      "id": "wed-msy6dl2h",
+      "createdAt": "2026-08-18T04:41:17.033Z",
+      "status": "cancelled",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林家妍",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T07:03:29.593Z",
+      "cancelReason": ""
+    },
+    {
+      "id": "wed-msy6ochi",
+      "createdAt": "2026-08-18T04:49:39.126Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "顏卉瓴"
+    },
+    {
+      "id": "wed-msy6omia",
+      "createdAt": "2026-08-18T04:49:52.114Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "顏卉瓴"
+    },
+    {
+      "id": "wed-msy6q01s",
+      "createdAt": "2026-08-18T04:50:56.320Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "郭美伶"
+    },
+    {
+      "id": "wed-msy6qrdu",
+      "createdAt": "2026-08-18T04:51:31.746Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "陳義明"
+    },
+    {
+      "id": "wed-msy6rwqq",
+      "createdAt": "2026-08-18T04:52:25.346Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "周品均"
+    },
+    {
+      "id": "wed-msy6skvi",
+      "createdAt": "2026-08-18T04:52:56.622Z",
+      "status": "cancelled",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "鄭麗娜",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:34:37.083Z",
+      "cancelReason": "出國"
+    },
+    {
+      "id": "wed-msy6tqty",
+      "createdAt": "2026-08-18T04:53:50.998Z",
+      "status": "cancelled",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "吳師儀",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:34:00.908Z",
+      "cancelReason": "有別事"
+    },
+    {
+      "id": "wed-msy6uisq",
+      "createdAt": "2026-08-18T04:54:27.242Z",
+      "status": "cancelled",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "吳尚樺",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:34:18.463Z",
+      "cancelReason": "有事"
+    },
+    {
+      "id": "wed-msy6vka0",
+      "createdAt": "2026-08-18T04:55:15.816Z",
+      "status": "cancelled",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "吳尚樺",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:36:05.772Z",
+      "cancelReason": "有事"
+    },
+    {
+      "id": "wed-msy6wbul",
+      "createdAt": "2026-08-18T04:55:51.549Z",
+      "status": "cancelled",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "吳師儀",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:35:51.146Z",
+      "cancelReason": "出國"
+    },
+    {
+      "id": "wed-msy6xee8",
+      "createdAt": "2026-08-18T04:56:41.504Z",
+      "status": "cancelled",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "鄭麗娜",
+      "cancelled": true,
+      "cancelledAt": "2026-08-18T15:36:25.928Z",
+      "cancelReason": "出國"
+    },
+    {
+      "id": "wed-msy6xrrh",
+      "createdAt": "2026-08-18T04:56:58.829Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "周品均"
+    },
+    {
+      "id": "wed-msy6xyp6",
+      "createdAt": "2026-08-18T04:57:07.818Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "陳義明"
+    },
+    {
+      "id": "wed-msy78h8o",
+      "createdAt": "2026-08-18T05:05:18.408Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林宥熒"
+    },
+    {
+      "id": "wed-msy794ab",
+      "createdAt": "2026-08-18T05:05:48.275Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "林宥熒"
+    },
+    {
+      "id": "wed-msy7p8id",
+      "createdAt": "2026-08-18T05:18:20.245Z",
+      "status": "cancelled",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "王美惠",
+      "cancelled": true,
+      "cancelledAt": "2026-08-19T07:25:11.773Z",
+      "cancelReason": ""
+    },
+    {
+      "id": "wed-msy8efbr",
+      "createdAt": "2026-08-18T05:37:55.479Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "張箐珂"
+    },
+    {
+      "id": "wed-msy8f22n",
+      "createdAt": "2026-08-18T05:38:24.959Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林子萱"
+    },
+    {
+      "id": "wed-msy8fem8",
+      "createdAt": "2026-08-18T05:38:41.216Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "管容"
+    },
+    {
+      "id": "wed-msy8fwxk",
+      "createdAt": "2026-08-18T05:39:04.952Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "陳采薰"
+    },
+    {
+      "id": "wed-msy8gcqz",
+      "createdAt": "2026-08-18T05:39:25.451Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "李永鋒"
+    },
+    {
+      "id": "wed-msy8h88a",
+      "createdAt": "2026-08-18T05:40:06.250Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "蕭宏名"
+    },
+    {
+      "id": "wed-msy8hoa6",
+      "createdAt": "2026-08-18T05:40:27.054Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "江恩瑜"
+    },
+    {
+      "id": "wed-msy8ivi3",
+      "createdAt": "2026-08-18T05:41:23.067Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "萬玉如"
+    },
+    {
+      "id": "wed-msy8nu4k",
+      "createdAt": "2026-08-18T05:45:14.564Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "張箐珂"
+    },
+    {
+      "id": "wed-msy8odgc",
+      "createdAt": "2026-08-18T05:45:39.612Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "陳采薰"
+    },
+    {
+      "id": "wed-msy8odml",
+      "createdAt": "2026-08-18T05:45:39.837Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "王鎂榛"
+    },
+    {
+      "id": "wed-msy8otan",
+      "createdAt": "2026-08-18T05:46:00.143Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "江恩瑜"
+    },
+    {
+      "id": "wed-msy8p7ba",
+      "createdAt": "2026-08-18T05:46:18.310Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "李永鋒"
+    },
+    {
+      "id": "wed-msy8pfry",
+      "createdAt": "2026-08-18T05:46:29.278Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "管容"
+    },
+    {
+      "id": "wed-msy8poo6",
+      "createdAt": "2026-08-18T05:46:40.806Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "莊芯慈"
+    },
+    {
+      "id": "wed-msy8q4n0",
+      "createdAt": "2026-08-18T05:47:01.500Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "蕭宏名"
+    },
+    {
+      "id": "wed-msy8qdfm",
+      "createdAt": "2026-08-18T05:47:12.898Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "林子萱"
+    },
+    {
+      "id": "wed-msy8qphh",
+      "createdAt": "2026-08-18T05:47:28.517Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "萬玉如"
+    },
+    {
+      "id": "wed-msy8r0qo",
+      "createdAt": "2026-08-18T05:47:43.104Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "侯雨杉"
+    },
+    {
+      "id": "wed-msy9ipph",
+      "createdAt": "2026-08-18T06:09:15.173Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "翁寶燕"
+    },
+    {
+      "id": "wed-msybkjul",
+      "createdAt": "2026-08-18T07:06:40.125Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "辛瑋庭"
+    },
+    {
+      "id": "wed-msyefymp",
+      "createdAt": "2026-08-18T08:27:04.849Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "王坤城"
+    },
+    {
+      "id": "wed-msytzbz7",
+      "createdAt": "2026-08-18T15:42:02.851Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "曾素美"
+    },
+    {
+      "id": "wed-msyys4m3",
+      "createdAt": "2026-08-18T17:56:24.795Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "曾愛尼"
+    },
+    {
+      "id": "wed-mszc9axi",
+      "createdAt": "2026-08-19T00:13:41.142Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "巫文成"
+    },
+    {
+      "id": "wed-mszfiyad",
+      "createdAt": "2026-08-19T01:45:10.165Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "沈育燕"
+    },
+    {
+      "id": "wed-mszicacv",
+      "createdAt": "2026-08-19T03:03:58.064Z",
+      "status": "active",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "莊芯瑜"
+    },
+    {
+      "id": "wed-mt0125yx",
+      "createdAt": "2026-08-19T11:47:58.521Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "高宇寒"
+    },
+    {
+      "id": "wed-mt04disf",
+      "createdAt": "2026-08-19T13:20:47.199Z",
+      "status": "active",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "林斯薇"
+    }
+  ],
   "checkins": [],
-  "cancellations": []
+  "cancellations": [
+    {
+      "id": "1217ad1b-d41f-44b0-9f69-40fffbbd8111",
+      "createdAt": "2026-08-18T06:00:01.634Z",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "王素美",
+      "reason": "看錯時間"
+    },
+    {
+      "id": "6b1f353c-1ead-49de-9f9c-12b7835ed150",
+      "createdAt": "2026-08-18T06:50:27.620Z",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "廖",
+      "reason": ""
+    },
+    {
+      "id": "b0050b18-a029-40a4-bc37-afe3cc827a3a",
+      "createdAt": "2026-08-18T07:03:29.593Z",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "林家妍",
+      "reason": ""
+    },
+    {
+      "id": "504cc6ab-a805-43a5-9c3c-af544652ae0d",
+      "createdAt": "2026-08-18T15:34:00.908Z",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "吳師儀",
+      "reason": "有別事"
+    },
+    {
+      "id": "d27a2354-0a6c-471d-8564-cd4b387cba68",
+      "createdAt": "2026-08-18T15:34:18.464Z",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "吳尚樺",
+      "reason": "有事"
+    },
+    {
+      "id": "bbaf6c6a-2a2e-4e84-9ac7-f6c1a300f127",
+      "createdAt": "2026-08-18T15:34:37.083Z",
+      "session": "8/26 AI 龍蝦智能體趨勢班",
+      "name": "鄭麗娜",
+      "reason": "出國"
+    },
+    {
+      "id": "04950645-5ce2-4d47-9bf8-75a47f535c04",
+      "createdAt": "2026-08-18T15:35:51.146Z",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "吳師儀",
+      "reason": "出國"
+    },
+    {
+      "id": "c025eaaf-775e-475c-b3df-bd7a41096b56",
+      "createdAt": "2026-08-18T15:36:05.772Z",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "吳尚樺",
+      "reason": "有事"
+    },
+    {
+      "id": "a55b9df5-949e-435e-9504-7c6da51775be",
+      "createdAt": "2026-08-18T15:36:25.928Z",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "鄭麗娜",
+      "reason": "出國"
+    },
+    {
+      "id": "25263ea6-c6d2-4832-ba57-8da520895f11",
+      "createdAt": "2026-08-19T07:25:11.773Z",
+      "session": "9/2 剪映 & 數字人實戰班",
+      "name": "王美惠",
+      "reason": ""
+    }
+  ]
 }
