@@ -1,16 +1,16 @@
 const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://gaps-sol-laboratory-precious.trycloudflare.com";
 let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
-const sessions = ["8/26 AI 龍蝦智能體趨勢班","9/2 剪映 & 數字人實戰班"];
+const sessions = ["9/23 AI 龍蝦智能體趨勢班","9/30 剪映 & 數字人實戰班"];
 const sessionCapacities = {
-  "8/26 AI 龍蝦智能體趨勢班": 30,
-  "9/2 剪映 & 數字人實戰班": 30
+  "9/23 AI 龍蝦智能體趨勢班": 30,
+  "9/30 剪映 & 數字人實戰班": 30
 };
 const sessionInfo = {
-  "8/26 AI 龍蝦智能體趨勢班": { title: "8/26（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
-  "9/2 剪映 & 數字人實戰班": { title: "9/2（三）剪映 & 數字人實戰班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
+  "9/23 AI 龍蝦智能體趨勢班": { title: "9/23（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
+  "9/30 剪映 & 數字人實戰班": { title: "9/30（三）剪映 & 數字人實戰班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
 };
-const SCRIPT_VERSION = "20260818114400";
+const SCRIPT_VERSION = "20260916121500";
 const REGISTRATION_CLOSED = false;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 const CHECKIN_STATS_COLLAPSED_KEY = "blueCourseCheckinStatsCollapsed";
