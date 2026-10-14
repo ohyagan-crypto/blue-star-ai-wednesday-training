@@ -1,4 +1,5 @@
-const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://gaps-sol-laboratory-precious.trycloudflare.com";
+const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://wednesday-api.lanxingapi.com";
+const API_REQUEST_TIMEOUT_MS = 12000;
 let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
 const sessions = ["10/21 AI 龍蝦智能體趨勢班","10/28 剪映 & 數字人實戰班"];
@@ -10,7 +11,7 @@ const sessionInfo = {
   "10/21 AI 龍蝦智能體趨勢班": { title: "10/21（三）AI 龍蝦智能體趨勢班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" },
   "10/28 剪映 & 數字人實戰班": { title: "10/28（三）剪映 & 數字人實戰班", address: "台中市西屯路二段256巷6號16樓之2｜藍星 AI 辦公室", transit: "14:00-16:00｜捷運文心櫻花站｜停車：逢甲立體停車場" }
 };
-const SCRIPT_VERSION = "20261014123034";
+const SCRIPT_VERSION = "20261014210000";
 const REGISTRATION_CLOSED = false;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 const CHECKIN_STATS_COLLAPSED_KEY = "blueCourseCheckinStatsCollapsed";
@@ -54,13 +55,17 @@ async function fetchWithApiFallback(path, options = {}) {
   await apiConfigReady;
   let lastError = null;
   for (const base of apiBases) {
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), API_REQUEST_TIMEOUT_MS);
     try {
-      const res = await fetch(api(path, base), options);
+      const res = await fetch(api(path, base), { ...options, signal: controller.signal });
       activeApiBase = base;
       if (res.ok || (res.status >= 400 && res.status < 500)) return res;
       lastError = new Error(`API ${res.status}`);
     } catch (err) {
       lastError = err;
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   }
   throw lastError || new Error("API unavailable");

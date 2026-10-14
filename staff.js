@@ -1,4 +1,5 @@
-const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://gaps-sol-laboratory-precious.trycloudflare.com";
+const DEFAULT_API_BASE = location.hostname.endsWith("loca.lt") ? location.origin : "https://wednesday-api.lanxingapi.com";
+const API_REQUEST_TIMEOUT_MS = 12000;
 const PIN_STORAGE_KEY = "blueCourseStaffPin";
 let activeApiBase = DEFAULT_API_BASE;
 let apiBases = [DEFAULT_API_BASE];
@@ -39,13 +40,17 @@ async function fetchWithApiFallback(path, options = {}) {
   await apiConfigReady;
   let lastError = null;
   for (const base of apiBases) {
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), API_REQUEST_TIMEOUT_MS);
     try {
-      const res = await fetch(api(path, base), options);
+      const res = await fetch(api(path, base), { ...options, signal: controller.signal });
       activeApiBase = base;
       if (res.ok || (res.status >= 400 && res.status < 500)) return res;
       lastError = new Error(`API ${res.status}`);
     } catch (err) {
       lastError = err;
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   }
   throw lastError || new Error("API unavailable");
